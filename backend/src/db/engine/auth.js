@@ -13,7 +13,7 @@ const register = async (req, resp) => {
     try {
         const chatid = query.chatid;
 
-        // check user
+        // check user auth
         let user = await User.findOne({ chatid });
         if (user) {
             console.log(`User with chatid ${chatid} already exists`);
